@@ -22,7 +22,7 @@ public class PrimeNumber {
 
 	}
 
-	private static boolean checkIfNumberIsPrime(long number) {
+	protected static boolean checkIfNumberIsPrime(long number) {
 		if(number == 1 || number == 0) {
 			return false;
 		}
