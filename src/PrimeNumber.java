@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class PrimeNumber {
 
 	public static void main(String[] args) {
+		System.out.println("checking if 2 is prime " + checkIfNumberIsPrime(2));
 		int again;
 		do {
 			Scanner input = new Scanner(System.in);
