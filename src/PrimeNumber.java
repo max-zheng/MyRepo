@@ -15,7 +15,7 @@ public class PrimeNumber {
 			System.out.print("The Number " + number + " is ");
 			if(numberIsPrime) System.out.println("prime!");
 			else System.out.println("not prime!");
-			System.out.print("Test another number? 1 = yes");
+			System.out.print("Test another number? 1 = yes ");
 			again = input.nextInt();
 
 		} while(again == 1);
