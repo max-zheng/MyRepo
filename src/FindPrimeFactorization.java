@@ -20,9 +20,9 @@ public class FindPrimeFactorization {
 				again = input.nextInt();
 				continue;
 			}
-			List<Integer> listOfPrimeFactors = new ArrayList<Integer>();
+			List<Long> listOfPrimeFactors = new ArrayList<Long>();
 			while(multiplyPrimeFactors(listOfPrimeFactors) != numberValue) {
-				int primeFactor = getAPrimeFactor(number);
+				long primeFactor = getAPrimeFactor(number);
 				listOfPrimeFactors.add(primeFactor);
 				number /= primeFactor;
 			}
@@ -34,24 +34,25 @@ public class FindPrimeFactorization {
 
 	}
 	
-	private static int getAPrimeFactor(long number) {
-		for(int i = 2; i <= number; i++) {
-			if(number % i == 0 && PrimeNumber.checkIfNumberIsPrime(i)) {
-				return i;
+	private static long getAPrimeFactor(long number) {
+		long prime = 2;
+		while(true) {
+			if(number % prime == 0) {
+				return prime;
 			}
+			prime = ReturnFirstXPrimes.findNextPrime(prime);
 		}
-		return -1;
 	}
 	
-	private static long multiplyPrimeFactors(List<Integer> listOfPrimeFactors) {
+	private static long multiplyPrimeFactors(List<Long> listOfPrimeFactors) {
 		long product = 1;
-		for(Integer prime: listOfPrimeFactors) {
+		for(Long prime: listOfPrimeFactors) {
 			product *= prime;
 		}
 		return product;
 	}
 	
-	private static String formatPrimeFactorization(List<Integer> listOfPrimeFactors) {
+	private static String formatPrimeFactorization(List<Long> listOfPrimeFactors) {
 		String display = "";
 		//String display = "";
 		for(int i = 0; i < listOfPrimeFactors.size();i++) {

@@ -18,7 +18,7 @@ public class ReturnFirstXPrimes {
         System.out.println(primes);
     }
 
-    private static Long findNextPrime(long previousPrime) {
+    protected static Long findNextPrime(long previousPrime) {
         PrimeNumber p = new PrimeNumber();
         long number = previousPrime++;
         while (true) {
