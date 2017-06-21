@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FindPrimeFactorization {
-	long numberValue;
 
 	public static void main(String[] args) {
 		int again;
@@ -60,7 +59,6 @@ public class FindPrimeFactorization {
 	
 	private static String formatPrimeFactorization(List<Long> listOfPrimeFactors) {
 		String display = "";
-		//String display = "";
 		for(int i = 0; i < listOfPrimeFactors.size();i++) {
 			int numOfOccurences = Collections.frequency(listOfPrimeFactors, listOfPrimeFactors.get(i));
 			display += listOfPrimeFactors.get(i); 
