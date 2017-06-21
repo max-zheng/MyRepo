@@ -12,6 +12,12 @@ public class FindPrimeFactorization {
 			Scanner input = new Scanner(System.in);
 			System.out.print("Enter a number: ");
 			long numberValue = input.nextLong();
+
+			
+			while(numberValue <= 1) {
+				System.out.print("\nPlease enter a valid number. The number must be greater than 1: ");
+				numberValue = input.nextLong();
+			}
 			long number = numberValue;
 
 			if(PrimeNumber.checkIfNumberIsPrime(number)) {
