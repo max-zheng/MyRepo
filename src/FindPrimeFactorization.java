@@ -17,28 +17,32 @@ public class FindPrimeFactorization {
 				System.out.print("\nPlease enter a valid number. The number must be greater than 1: ");
 				numberValue = input.nextLong();
 			}
-			long number = numberValue;
 
-			if(PrimeNumber.checkIfNumberIsPrime(number)) {
-				System.out.println("The prime factorization of " + numberValue + " is " + number + " * 1");
+			if(PrimeNumber.checkIfNumberIsPrime(numberValue)) {
+				System.out.println("The prime factorization of " + numberValue + " is " + numberValue + " * 1");
 				System.out.print("\nCalculate prime factorization for another number? 1 = yes ");
 				again = input.nextInt();
 				continue;
 			}
-			List<Long> listOfPrimeFactors = new ArrayList<Long>();
-			while(multiplyPrimeFactors(listOfPrimeFactors) != numberValue) {
-				long primeFactor = getAPrimeFactor(number);
-				listOfPrimeFactors.add(primeFactor);
-				number /= primeFactor;
-			}
-			System.out.println("The prime factorization of " + numberValue + " is " + formatPrimeFactorization(listOfPrimeFactors));
+			buildListOfPrimeFactors(numberValue);
 
 			System.out.print("\nCalculate prime factorization for another number? 1 = yes ");
 			again = input.nextInt();
 		} while(again == 1);
 
 	}
-	
+
+	private static void buildListOfPrimeFactors(long numberValue) {
+		long number = numberValue;
+		List<Long> listOfPrimeFactors = new ArrayList<Long>();
+		while(multiplyPrimeFactors(listOfPrimeFactors) != numberValue) {
+            long primeFactor = getAPrimeFactor(number);
+            listOfPrimeFactors.add(primeFactor);
+            number /= primeFactor;
+        }
+		System.out.println("The prime factorization of " + numberValue + " is " + formatPrimeFactorization(listOfPrimeFactors));
+	}
+
 	private static long getAPrimeFactor(long number) {
 		long prime = 2;
 		while(true) {
