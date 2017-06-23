@@ -37,13 +37,18 @@ public class ReturnFirstXPrimes {
     private static String buildPrimeDisplay( List<Long> primes) {
         StringBuilder builder = new StringBuilder();
         builder.append("#1:2, ");
+        int numOfPrimesPerRow;
+        if(primes.size() >= 500)
+            numOfPrimesPerRow = primes.size() / 500;
+        else
+            numOfPrimesPerRow = 10;
         for(int i = 1; i < primes.size(); i++) {
             builder.append("#" + (i + 1) + ":" + primes.get(i) + ", ");
-            if(i % 50 == 0) {
+            if (i % (numOfPrimesPerRow) == 0)
                 builder.append("\n");
-            }
         }
         builder.delete(builder.length() - 2, builder.length());
         return builder.toString();
     }
 }
+
