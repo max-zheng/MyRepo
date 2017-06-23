@@ -1,24 +1,18 @@
-import java.util.Scanner;
-
-public class CheckIfNumberIsPrime {
+public class CheckIfNumberIsPrime extends PrimeNumber{
 
 	public static void main(String[] args) {
-		System.out.println("checking if 2 is prime " + evaluateNumber(2));
-		int again;
-		do {
-			Scanner input = new Scanner(System.in);
-			System.out.print("Enter an integer: ");
-			long number = input.nextLong();
+		boolean testAgain = true;
+		while(testAgain == true) {
 
+			long number = assignLongVariableThroughScanner("Enter an integer: ");
 			boolean numberIsPrime = evaluateNumber(number);
 
 			System.out.print("The Number " + number + " is ");
-			if(numberIsPrime) System.out.println("prime!");
+			if (numberIsPrime) System.out.println("prime!");
 			else System.out.println("not prime!");
-			System.out.print("Test another number? 1 = yes ");
-			again = input.nextInt();
 
-		} while(again == 1);
+			testAgain = allowUserToTestAgain();
+		}
 
 
 	}
