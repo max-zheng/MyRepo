@@ -18,7 +18,7 @@ public class FindPrimeFactorization {
 				numberValue = input.nextLong();
 			}
 
-			if(PrimeNumber.checkIfNumberIsPrime(numberValue)) {
+			if(CheckIfNumberIsPrime.evaluateNumber(numberValue)) {
 				System.out.println("The prime factorization of " + numberValue + " is " + numberValue + " * 1");
 				System.out.print("\nCalculate prime factorization for another number? 1 = yes ");
 				again = input.nextInt();

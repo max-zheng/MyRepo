@@ -25,10 +25,10 @@ public class ReturnFirstXPrimes {
     }
 
     protected static Long findNextPrime(long previousPrime) {
-        PrimeNumber p = new PrimeNumber();
+        CheckIfNumberIsPrime p = new CheckIfNumberIsPrime();
         long number = previousPrime++;
         while (true) {
-            if (p.checkIfNumberIsPrime(++number)) {
+            if (p.evaluateNumber(++number)) {
                 return number;
             }
         }
